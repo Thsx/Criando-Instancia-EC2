@@ -10,4 +10,21 @@ variable  "ami"{
 variable "type"{
     default ="t2.micro" 
 }
- 
+
+data "aws_security_group" "selected" {
+   id = "sg-d4bb3baf"
+}
+variable "subnet_id" {
+    default = "subnet-b35e89d5"
+}
+
+variable "i_from_port" {
+    default = "80"
+}
+
+variable "i_to_port" {
+    default = "80"
+}
+variable "i_protocol"{
+    default = "tcp"
+}
