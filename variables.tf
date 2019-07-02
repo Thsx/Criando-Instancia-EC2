@@ -11,11 +11,14 @@ variable "type"{
     default ="t2.micro" 
 }
 
-data "aws_security_group" "selected" {
-   id = "sg-d4bb3baf"
+variable "aws_security_group" {
+   default = "sg-d4bb3baf"
 }
 variable "subnet_id" {
     default = "subnet-b35e89d5"
+}
+variable "vpc_id"{
+    default = "vpc-1961447e"
 }
 
 variable "i_from_port" {
@@ -27,4 +30,19 @@ variable "i_to_port" {
 }
 variable "i_protocol"{
     default = "tcp"
+}
+variable "i_cidr_block"{
+    default = "192.168.0.0/16"
+}
+variable "e_from_port"{
+    default = "0"
+}
+variable "e_to_port"{
+    default = "0"
+}
+variable "e_protocol"{
+    default = "-1"
+}
+variable "e_cidr_block"{
+    default = ["0.0.0.0/0"]
 }
